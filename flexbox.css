@@ -1,0 +1,67 @@
+/* quando usamos o flex sempre usamos no PAI dos itens que queremos */
+.cabecalhoPrincipal .container {
+  display: flex;
+  align-items: center;
+  /* o justify-content move o espaço em branco do bloco para outra posiçao, no caso, entre o h1 e a nav */
+  justify-content: space-between;
+}
+
+.cabecalhoPrincipal-nav {
+  display: flex;
+  /* nao da pra usar space-between nesse caso pois ele nao tem espaço sobrando para distribuir */
+}
+
+.conteudoPrincipal-cursos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.conteudoPrincipal-cursos-link {
+  width: 23%;
+  margin: 1%;
+}
+
+/* multiplos de 4 */
+.conteudoPrincipal-cursos-link:nth-child(4n) {
+  margin-right: 0;
+}
+/* dessa forma, alem de pegar o 5, 9, etc, ele tambem pega o 1. pois ele faz 4x0 = 0, + 1 é 1. 4x1 = 4, + 1 é 5 e etc... */
+.conteudoPrincipal-cursos-link:nth-child(4n + 1) {
+  margin-left: 0;
+}
+
+/* footer mapa de cursos */
+.rodapePrincipal-navMap-list {
+  display: flex;
+  /* o flex por base já usa a direction de row, ou seja, vertical, mas podemos mudar para column, ou seja, horizontal   */
+  flex-direction: column;
+  /* o wrap faz com que, caso nao caiba na coluna de 255px, ele quebra para uma nova coluna */
+  flex-wrap: wrap;
+  /* faz a mesma coisa que as duas opçoes acima */
+  /* flex-flow: column wrap; */
+  height: 255px;
+}
+
+/* footer */
+.rodapePrincipal-patrocinadores .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 70%;
+  margin-right: 5%;
+  /* usamos o 5% de margem da direita para compensar os 5 que tiramos da width para os itens nao ficarem colados */
+}
+
+.rodapePrincipal-contatoForm {
+  width: 25%;
+}
+
+/* os fihos pegam o mesmo tamanho, logo, o botao ficou exatamente do mesmo tamanho que o input */
+.rodapePrincipal-contatoForm-fieldset {
+  display: flex;
+}
