@@ -14,11 +14,12 @@
 .conteudoPrincipal-cursos {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .conteudoPrincipal-cursos-link {
   width: 23%;
-  margin: 1%;
+  margin-bottom: 1%;
 }
 
 /* multiplos de 4 */
@@ -29,6 +30,28 @@
 .conteudoPrincipal-cursos-link:nth-child(4n + 1) {
   margin-left: 0;
 }
+
+/* video */
+.videoSobre .container {
+  display: flex;
+}
+
+.videoSobre-sobre {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+
+.videoSobre-sobre-list {
+  flex-grow: 1;
+}
+
+.videoSobre-video {
+  flex-grow: 1;
+  flex-shrink: 2;
+}
+/* o flex grow pegou o espaço vazio e dividiu em dois, metade ele deu pra lista e metade pro video  */
 
 /* footer mapa de cursos */
 .rodapePrincipal-navMap-list {
@@ -64,4 +87,60 @@
 /* os fihos pegam o mesmo tamanho, logo, o botao ficou exatamente do mesmo tamanho que o input */
 .rodapePrincipal-contatoForm-fieldset {
   display: flex;
+}
+
+/* parte mobile */
+@media (max-width: 768px) {
+  .cabecalhoPrincipal-nav {
+    flex-direction: column;
+  }
+
+  .cabecalhoPrincipal .container {
+    flex-direction: column;
+    align-items: initial;
+    text-align: center;
+  }
+
+  .conteudoPrincipal-cursos {
+    flex-direction: column;
+  }
+
+  .conteudoPrincipal-cursos-link {
+    width: 100%;
+  }
+
+  .rodapePrincipal-navMap-list {
+    height: auto;
+  }
+
+.videoSobre .container {
+  flex-direction: column;
+}
+
+.videoSobre-video {
+  margin: 0 auto;
+}
+
+  /* mudando a posição da lista. por padrao, todos os flex items tem uma ordem zero. colocando -1, ele fica antes de todos */
+  .cabecalhoPrincipal-nav-link-app {
+    order: -1;
+  }
+
+  .rodapePrincipal-patrocinadores .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rodapePrincipal-patrocinadores-list {
+    margin: 0;
+    width: 100%;
+  }
+
+  .rodapePrincipal-contatoForm {
+    width: 100%;
+  }
+
+  .rodapePrincipal-contatoForm-fieldset {
+    justify-content: center;
+  }
 }
